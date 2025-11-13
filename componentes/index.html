@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores & Arte - Manualidades Personalizadas</title>
+    <title>Dulce Detalles - Hecho a mano, hecho con amor</title>
     <style>
         * {
             margin: 0;
@@ -12,9 +12,9 @@
         }
 
         :root {
-            --primary: #E8B4B8;
-            --secondary: #F5E6D3;
-            --accent: #D4A5A5;
+            --primary: #E91E8C;
+            --secondary: #FFB6D9;
+            --light-pink: #FFE5F1;
             --dark: #2C2C2C;
             --light: #FFFFFF;
         }
@@ -29,27 +29,36 @@
         header {
             position: fixed;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 20px rgba(233, 30, 140, 0.1);
             transition: all 0.3s ease;
         }
 
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.5rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--accent);
-            letter-spacing: 1px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -77,6 +86,10 @@
             transition: width 0.3s;
         }
 
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
         .nav-links a:hover::after {
             width: 100%;
         }
@@ -87,7 +100,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--light) 100%);
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--light) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -99,22 +112,26 @@
             animation: fadeInUp 1s ease;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            font-weight: 300;
+        .hero-logo {
+            width: 350px;
+            max-width: 90%;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 10px 30px rgba(233, 30, 140, 0.2));
+            animation: float 4s ease-in-out infinite;
         }
 
-        .hero h1 span {
-            color: var(--accent);
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
             font-weight: 600;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
-            color: #666;
+            color: var(--dark);
+            font-weight: 300;
         }
 
         .cta-button {
@@ -126,18 +143,19 @@
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(232, 180, 184, 0.3);
+            box-shadow: 0 10px 30px rgba(233, 30, 140, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(232, 180, 184, 0.4);
+            box-shadow: 0 15px 40px rgba(233, 30, 140, 0.4);
+            background: #d11a7a;
         }
 
         /* Floating elements */
         .floating-element {
             position: absolute;
-            opacity: 0.1;
+            opacity: 0.15;
             animation: float 6s ease-in-out infinite;
         }
 
@@ -162,8 +180,8 @@
             animation-delay: 4s;
         }
 
-        /* Products Section */
-        .products {
+        /* Mission & Vision Section */
+        .mission-vision {
             padding: 6rem 2rem;
             background: var(--light);
         }
@@ -172,8 +190,108 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .mv-card {
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--light) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(233, 30, 140, 0.1);
+            transition: all 0.3s;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(233, 30, 140, 0.2);
+        }
+
+        .mv-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mv-card p {
+            line-height: 1.8;
             color: var(--dark);
-            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        /* Objectives Section */
+        .objectives {
+            padding: 6rem 2rem;
+            background: var(--light-pink);
+        }
+
+        .objectives-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .objective-main {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(233, 30, 140, 0.15);
+        }
+
+        .objective-main h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .objective-main p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .objectives-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .objective-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(233, 30, 140, 0.1);
+            transition: all 0.3s;
+        }
+
+        .objective-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(233, 30, 140, 0.2);
+        }
+
+        .objective-item::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 2rem;
+            background: var(--light);
         }
 
         .products-grid {
@@ -188,20 +306,20 @@
             background: var(--light);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 40px rgba(233, 30, 140, 0.1);
             transition: all 0.3s;
             cursor: pointer;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 60px rgba(233, 30, 140, 0.2);
         }
 
         .product-image {
             width: 100%;
             height: 300px;
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            background: linear-gradient(135deg, var(--light-pink), var(--secondary));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -220,7 +338,7 @@
         .product-info h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .product-info p {
@@ -228,23 +346,40 @@
             line-height: 1.6;
         }
 
-        /* About Section */
-        .about {
+        /* Team Section */
+        .team {
             padding: 6rem 2rem;
-            background: var(--secondary);
+            background: var(--light-pink);
         }
 
-        .about-content {
-            max-width: 800px;
+        .team-content {
+            max-width: 600px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about-content p {
-            font-size: 1.2rem;
-            line-height: 1.8;
+        .team-card {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(233, 30, 140, 0.15);
+        }
+
+        .team-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card p {
+            font-size: 1.3rem;
             color: var(--dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
         }
 
         /* Contact Section */
@@ -278,7 +413,7 @@
         .form-group input,
         .form-group textarea {
             padding: 1rem;
-            border: 2px solid #eee;
+            border: 2px solid var(--light-pink);
             border-radius: 10px;
             font-size: 1rem;
             transition: border 0.3s;
@@ -298,7 +433,7 @@
 
         .submit-btn {
             padding: 1rem 2rem;
-            background: var(--accent);
+            background: var(--primary);
             color: var(--light);
             border: none;
             border-radius: 10px;
@@ -309,34 +444,41 @@
         }
 
         .submit-btn:hover {
-            background: var(--primary);
+            background: #d11a7a;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(232, 180, 184, 0.3);
+            box-shadow: 0 10px 30px rgba(233, 30, 140, 0.3);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--primary);
             color: var(--light);
             padding: 3rem 2rem;
             text-align: center;
+        }
+
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
             color: var(--light);
             font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: transform 0.3s;
+            text-decoration: none;
         }
 
         .social-links a:hover {
-            color: var(--primary);
+            transform: scale(1.2);
         }
 
         /* Animations */
@@ -353,24 +495,41 @@
 
         @keyframes float {
             0%, 100% {
-                transform: translateY(0) rotate(0deg);
+                transform: translateY(0);
             }
             50% {
-                transform: translateY(-20px) rotate(5deg);
+                transform: translateY(-20px);
             }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .hero-logo {
+                width: 250px;
             }
 
             .nav-links {
-                gap: 1rem;
+                display: none;
             }
 
-            .products-grid {
+            .logo-img {
+                width: 60px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products-grid,
+            .mv-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -379,11 +538,14 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Flores & Arte</div>
+            <div class="logo-container">
+                <img src="https://i.imgur.com/placeholder-logo.png" alt="Dulce Detalles Logo" class="logo-img" onerror="this.style.display='none'">
+            </div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#mision">Misión & Visión</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
                 <li><a href="#productos">Productos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -391,12 +553,53 @@
 
     <section class="hero" id="inicio">
         <div class="floating-element">🌸</div>
-        <div class="floating-element">🎨</div>
-        <div class="floating-element">💐</div>
+        <div class="floating-element">💕</div>
+        <div class="floating-element">⭐</div>
         <div class="hero-content">
-            <h1>Creaciones que <span>perduran</span></h1>
-            <p>Manualidades únicas para tus momentos especiales</p>
-            <a href="#productos" class="cta-button">Ver Colección</a>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cdefs%3E%3Cstyle%3E .pink-light%7Bfill:%23FFB6D9;%7D .pink-dark%7Bfill:%23E91E8C;%7D .white%7Bfill:%23FFFFFF;%7D %3C/style%3E%3C/defs%3E%3Cellipse class='pink-light' cx='250' cy='220' rx='180' ry='200'/%3E%3Cellipse class='pink-dark' cx='320' cy='200' rx='100' ry='120' opacity='0.6'/%3E%3Cellipse class='pink-dark' cx='180' cy='200' rx='100' ry='120' opacity='0.6'/%3E%3Cellipse class='pink-light' cx='250' cy='160' rx='80' ry='100'/%3E%3Ctext x='250' y='180' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23FFFFFF' text-anchor='middle' style='text-shadow: 2px 2px 4px rgba(0,0,0,0.2);'%3EDulce%3C/text%3E%3Ctext x='250' y='250' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='%23FFFFFF' text-anchor='middle' style='text-shadow: 2px 2px 4px rgba(0,0,0,0.2);'%3EDetalles%3C/text%3E%3Cpath d='M 150 300 Q 250 280 350 300' fill='none' stroke='%23E91E8C' stroke-width='3'/%3E%3Ctext x='250' y='340' font-family='Arial, sans-serif' font-size='20' fill='%23E91E8C' text-anchor='middle'%3EYULYANNY OVIEDO%3C/text%3E%3Ctext x='250' y='420' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='%23E91E8C' text-anchor='middle' letter-spacing='2'%3EHECHO A MANO, HECHO CON AMOR%3C/text%3E%3Cpolygon class='pink-dark' points='100,280 110,300 90,300' opacity='0.6'/%3E%3Cpolygon class='pink-dark' points='400,280 410,300 390,300' opacity='0.6'/%3E%3Ccircle class='pink-dark' cx='120' cy='150' r='15' opacity='0.5'/%3E%3Ccircle class='pink-dark' cx='380' cy='150' r='15' opacity='0.5'/%3E%3C/svg%3E" alt="Dulce Detalles" class="hero-logo">
+            <p>Hecho a mano, hecho con amor</p>
+            <a href="#productos" class="cta-button">Descubre Nuestros Productos</a>
+        </div>
+    </section>
+
+    <section class="mission-vision" id="mision">
+        <h2 class="section-title">Nuestra Esencia</h2>
+        <div class="mv-container">
+            <div class="mv-card">
+                <h3>🎯 Misión</h3>
+                <p>Brindar emociones inolvidables a través de detalles personalizados y flores eternas, ofreciendo productos de alta calidad que expresen amor, gratitud y alegría en cada ocasión, cuidando cada presentación con dedicación y dulzura.</p>
+            </div>
+            <div class="mv-card">
+                <h3>👁️ Visión</h3>
+                <p>Ser una empresa reconocida a nivel local y nacional por la creatividad, elegancia y calidad de nuestros arreglos y cajas de detalles, consolidándonos como la mejor opción para regalar momentos especiales y únicos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="objectives" id="objetivos">
+        <h2 class="section-title">Nuestros Objetivos</h2>
+        <div class="objectives-content">
+            <div class="objective-main">
+                <h3>🎯 Objetivo General</h3>
+                <p>Ofrecer productos personalizados y de alta calidad que transmitan sentimientos a través de flores eternas y cajas de detalles, fortaleciendo la conexión emocional entre las personas mediante obsequios significativos.</p>
+            </div>
+            <div class="objectives-list">
+                <div class="objective-item">
+                    Desarrollar una línea variada de arreglos y cajas personalizadas para diferentes ocasiones (cumpleaños, aniversarios, fechas especiales).
+                </div>
+                <div class="objective-item">
+                    Implementar estrategias de marketing digital en redes sociales para aumentar la visibilidad y ventas de la marca.
+                </div>
+                <div class="objective-item">
+                    Garantizar la satisfacción del cliente mediante un servicio amable, rápido y confiable.
+                </div>
+                <div class="objective-item">
+                    Fomentar la creatividad y la innovación en el diseño de nuevos productos.
+                </div>
+                <div class="objective-item">
+                    Establecer alianzas con proveedores locales para garantizar materiales de calidad y precios competitivos.
+                </div>
+            </div>
         </div>
     </section>
 
@@ -407,7 +610,14 @@
                 <div class="product-image">🌹</div>
                 <div class="product-info">
                     <h3>Flores Eternas</h3>
-                    <p>Rosas y flores preservadas que mantienen su belleza para siempre. Perfectas para decoración permanente y regalos especiales.</p>
+                    <p>Rosas y flores preservadas que mantienen su belleza para siempre. Perfectas para decoración permanente y regalos especiales que expresan amor duradero.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🎁</div>
+                <div class="product-info">
+                    <h3>Cajas de Detalles</h3>
+                    <p>Cajas personalizadas con detalles únicos para sorprender en cualquier ocasión. Cada caja es diseñada con amor y dedicación.</p>
                 </div>
             </div>
             <div class="product-card">
@@ -420,30 +630,27 @@
             <div class="product-card">
                 <div class="product-image">💐</div>
                 <div class="product-info">
-                    <h3>Ramos para Eventos</h3>
-                    <p>Arreglos florales artesanales para bodas, graduaciones y fechas importantes. Diseños únicos hechos a mano.</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">🎁</div>
-                <div class="product-info">
-                    <h3>Regalos Personalizados</h3>
-                    <p>Detalles únicos y especiales para sorprender en cualquier ocasión. Cada pieza es una obra de arte hecha con amor.</p>
+                    <h3>Arreglos para Eventos</h3>
+                    <p>Arreglos florales artesanales para bodas, graduaciones y fechas importantes. Diseños únicos hechos con amor.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about" id="nosotros">
-        <h2 class="section-title">Sobre Nosotros</h2>
-        <div class="about-content">
-            <p>Somos artesanos apasionados por crear piezas únicas que celebran tus momentos más importantes. Cada manualidad está hecha con dedicación y cariño, utilizando materiales de la más alta calidad.</p>
-            <p>Transformamos ideas en realidad, creando recuerdos tangibles que perduran en el tiempo. Tu satisfacción es nuestra mayor inspiración.</p>
+    <section class="team" id="equipo">
+        <h2 class="section-title">Nuestro Equipo</h2>
+        <div class="team-content">
+            <div class="team-card">
+                <div class="team-icon">👩‍💼</div>
+                <h3>Yulyanny Oviedo</h3>
+                <p>Presidenta & Fundadora</p>
+                <p style="color: #666; margin-top: 1rem;">Artesana apasionada dedicada a crear momentos inolvidables a través de detalles únicos y personalizados.</p>
+            </div>
         </div>
     </section>
 
     <section class="contact" id="contacto">
-        <h2 class="section-title">Contacto</h2>
+        <h2 class="section-title">Contáctanos</h2>
         <div class="contact-content">
             <form class="contact-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
@@ -455,8 +662,12 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
                     <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message" required placeholder="Cuéntanos sobre el detalle que deseas..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Enviar Mensaje</button>
             </form>
@@ -464,7 +675,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Flores & Arte - Todos los derechos reservados</p>
+        <h3 style="margin-bottom: 1rem;">Dulce Detalles</h3>
+        <p style="margin-bottom: 0.5rem;">Hecho a mano, hecho con amor</p>
+        <p>&copy; 2024 Dulce Detalles - Yulyanny Oviedo</p>
         <div class="social-links">
             <a href="#" title="Instagram">📷</a>
             <a href="#" title="Facebook">📘</a>
@@ -491,9 +704,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.1)';
+                header.style.boxShadow = '0 5px 30px rgba(233, 30, 140, 0.15)';
             } else {
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+                header.style.boxShadow = '0 2px 20px rgba(233, 30, 140, 0.1)';
             }
         });
 
@@ -503,7 +716,7 @@
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData);
             
-            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+            alert('¡Gracias por tu mensaje! En Dulce Detalles te contactaremos pronto para crear ese momento especial. 💕');
             e.target.reset();
         }
 
@@ -521,7 +734,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.product-card, .about-content, .contact-content').forEach(el => {
+        document.querySelectorAll('.product-card, .mv-card, .objective-item, .team-card').forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
         });
