@@ -1,0 +1,63 @@
+/* ------ CABECERA ------ */
+.detalle-header {
+    text-align: center;
+    padding: 100px 50px;
+    background: linear-gradient(135deg, #ffd3e2, #fff0f7);
+}
+.detalle-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e91e63;
+}
+.detalle-header p {
+    font-size: 1.3rem;
+    color: #444;
+}
+
+/* ------ INFORMACIÓN ------ */
+.detalle-info {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+}
+.detalle-img {
+    width: 50%;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+}
+.detalle-text {
+    width: 50%;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* ------ CALENDARIO ------ */
+.detalle-calendario {
+    max-width: 750px;
+    margin: 40px auto;
+}
+.calendario-lista {
+    list-style: none;
+    padding: 0;
+}
+.calendario-lista li {
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    background: #ffe4ed;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* ------ FRASE ------ */
+.frase {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 1.55rem;
+    text-align: center;
+    color: #c2185b;
+    padding-bottom: 50px;
+}

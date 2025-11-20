@@ -1,0 +1,65 @@
+.detalle-header {
+    text-align: center;
+    padding: 100px 20px; /* más espacio arriba para que no lo tape el header */
+    
+}
+
+.detalle-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e91e63 !important; /* fuerza el color aunque otra regla lo sobrescriba */
+    margin-bottom: 10px;
+}
+
+.detalle-header p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+#detalle-header {
+    scroll-margin-top: 140px;
+}
+
+
+.detalle-info {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+.detalle-img {
+    width: 50%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.detalle-text {
+    width: 50%;
+}
+
+.detalle-calendario {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.calendario-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.calendario-lista li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #ffe4ed;
+    border-radius: 8px;
+}
+
+.frase {
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 1.55rem;
+    text-align: center;
+    color: #333;
+}

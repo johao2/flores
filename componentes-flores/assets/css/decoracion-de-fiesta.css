@@ -1,0 +1,61 @@
+.detalle-header {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.detalle-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e91e63 !important;
+}
+
+.detalle-header p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.detalle-info {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+.detalle-img {
+    width: 50%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.detalle-text {
+    width: 50%;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.detalle-calendario {
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.calendario-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.calendario-lista li {
+    background: #ffe4ed;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+.frase {
+    font-size: 1.6rem;
+    margin-top: 25px;
+    font-style: italic;
+    color: #e91e63;
+}
